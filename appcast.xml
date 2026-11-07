@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>NachOS</title>
+    <language>es</language>
+    <item>
+      <title>NachOS 0.1.0</title>
+      <pubDate>Sat, 07 Nov 2026 17:38:13 GMT</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul></ul>]]></description>
+      <enclosure url="https://github.com/oriol5000/nachos/releases/download/v0.1.0/NachOS-0.1.0.dmg" sparkle:edSignature="7tUBKB1yS4PLkMrTfQ69SSB9igIveSaO7auAXNyqvj/MK4MTYijRF5nfBxrzEEboaTv4CDS7qwm3oKIDcUSfCQ==" length="5841947" type="application/octet-stream"/>
+    </item>
+  </channel>
+</rss>

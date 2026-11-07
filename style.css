@@ -1,0 +1,369 @@
+/* NachOS — a single page in the spirit of Apple's product pages: lots of air, big type,
+   the island in black, and the nacho's yellow as the only colour. */
+
+:root {
+  --bg: #fbfbfd;
+  --surface: #ffffff;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --line: #d2d2d7;
+  --yellow: #ffc93d;
+  --amber: #b86b00;
+  --button: #1d1d1f;
+  --button-text: #ffffff;
+  --island: #000000;
+  --radius: 22px;
+  --bar: color-mix(in srgb, var(--bg) 78%, transparent);
+  /* Deeper on a light page, where the island's light yellow would hardly show. */
+  --slogan: linear-gradient(90deg, #d08a00, #e8611c);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --surface: #111113;
+    --text: #f5f5f7;
+    --muted: #a1a1a6;
+    --line: #2c2c2e;
+    --amber: #ffc93d;
+    --button: #ffc93d;
+    --button-text: #1d1d1f;
+    --island: #1c1c1e;
+    /* Like macOS's menu bar in dark mode: grey, so that the black notch stands out on it. */
+    --bar: rgba(44, 44, 48, 0.82);
+    --slogan: linear-gradient(90deg, #ffc93d, #ff9926);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 22px; }
+
+/* Top bar */
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  background: var(--bar);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.bar .wrap { display: flex; align-items: center; gap: 10px; height: 52px; font-size: 14px; max-width: none; padding: 0 26px; }
+.bar img { width: 30px; height: 30px; margin-right: -2px; }
+.bar strong { font-size: 16px; }
+/* The same yellow-to-orange as "Notchmaxxing" beside the notch in the app's island. */
+.bar .slogan {
+  font-size: 14px; font-weight: 600;
+  background: var(--slogan); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.bar nav { margin-left: auto; display: flex; gap: 22px; align-items: center; }
+.bar nav a { text-decoration: none; color: var(--muted); }
+.bar nav a:hover { color: var(--text); }
+.bar .lang { border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+
+/* Hero */
+.hero { text-align: center; padding: 64px 0 40px; }
+.hero-stage { width: min(720px, 100%); margin: 0 auto 48px; }
+.s-hero { aspect-ratio: 460 / 190; box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.45); }
+
+.icon { width: 132px; height: 132px; margin-bottom: 8px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.18)); }
+h1 { font-size: clamp(48px, 9vw, 88px); line-height: 1.02; letter-spacing: -0.03em; margin: 0; }
+.tagline { font-size: clamp(22px, 3.4vw, 32px); font-weight: 600; color: var(--amber); margin: 4px 0 0; letter-spacing: -0.01em; }
+.lead { max-width: 640px; margin: 22px auto 0; font-size: clamp(19px, 2.4vw, 23px); color: var(--muted); }
+
+.cta { margin-top: 34px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.button {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--button); color: var(--button-text);
+  padding: 14px 28px; border-radius: 999px;
+  font-size: 18px; font-weight: 600; text-decoration: none;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.button:hover { transform: scale(1.03); }
+.button svg { width: 18px; height: 18px; }
+.fine { font-size: 13px; color: var(--muted); }
+
+/* Feature rows */
+section { padding: 72px 0; }
+.section-title { text-align: center; font-size: clamp(32px, 5vw, 48px); letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 12px; }
+.section-lead { text-align: center; color: var(--muted); font-size: 19px; margin: 0 auto 48px; max-width: 620px; }
+
+.feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; margin: 0 0 80px; }
+/* Without this, an image keeps its full width and pushes the text off the page. */
+.feature > *, .grid > *, .steps > *, .split > * { min-width: 0; }
+.feature:nth-child(even) .media { order: 2; }
+.feature h3 { font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 12px; }
+.feature p { color: var(--muted); margin: 0; font-size: 18px; }
+.media img { width: 100%; border-radius: var(--radius); display: block; box-shadow: 0 24px 60px -30px rgba(0,0,0,.4); }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+.card .emoji { font-size: 30px; line-height: 1; }
+.card h4 { margin: 14px 0 6px; font-size: 19px; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* First launch */
+.steps { counter-reset: step; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; list-style: none; padding: 0; margin: 0; }
+.steps li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+.steps li::before {
+  counter-increment: step; content: counter(step);
+  display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--yellow); color: #1d1d1f; font-weight: 700; margin-bottom: 12px;
+}
+.steps strong { display: block; margin-bottom: 4px; }
+.steps span { color: var(--muted); font-size: 15px; }
+.note { text-align: center; color: var(--muted); font-size: 15px; margin-top: 22px; }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.split .card ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+
+footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 13px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+footer .right { margin-left: auto; }
+
+/* Where the menu would reach the notch, only the language switcher stays. */
+@media (max-width: 1080px) {
+  .bar nav .hide-small { display: none; }
+}
+
+@media (max-width: 760px) {
+  /* Narrower than this, the docked notch would reach it. */
+  .bar .slogan { display: none; }
+  .feature { grid-template-columns: 1fr; gap: 22px; margin-bottom: 56px; }
+  .feature:nth-child(even) .media { order: 0; }
+  .grid, .steps, .split { grid-template-columns: 1fr; }
+  section { padding: 52px 0; }
+  footer .right { margin-left: 0; }
+}
+
+
+/* ───────────── Scenes ─────────────
+   The welcome tour's animations, drawn by the browser so they run at the screen's own rate.
+   Each stage is 460 × 240 units; --u is one unit at whatever size the stage is shown. */
+
+.stage {
+  container-type: inline-size;
+  position: relative; width: 100%; aspect-ratio: 460 / 240; overflow: hidden;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #3b3373 0%, #8c4772 55%, #ee8c59 100%);
+  box-shadow: 0 24px 60px -30px rgba(0,0,0,.45);
+  --u: calc(100cqw / 460);
+}
+.stage > * { position: absolute; }
+.stage .menubar { inset: 0 0 auto 0; height: calc(var(--u) * 14); background: rgba(0,0,0,.22); }
+.stage .menubar::before {
+  content: ""; position: absolute; left: calc(var(--u) * 10); top: calc(var(--u) * 5);
+  width: calc(var(--u) * 90); height: calc(var(--u) * 4); border-radius: 9px;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 calc(var(--u) * 16), transparent 0 calc(var(--u) * 22));
+}
+.stage .isl {
+  left: 50%; top: 0; transform: translateX(-50%);
+  background: #000; overflow: hidden;
+  width: calc(var(--u) * 64); height: calc(var(--u) * 14); border-radius: 0 0 calc(var(--u) * 7) calc(var(--u) * 7);
+}
+.stage .cursor {
+  width: calc(var(--u) * 13); height: calc(var(--u) * 19); left: 0; top: 0;
+  background: #fff;
+  clip-path: polygon(0 0, 0 78%, 26% 60%, 44% 100%, 58% 94%, 41% 56%, 76% 56%);
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.5));
+}
+.stage .win {
+  background: #f5f5f5; border-radius: calc(var(--u) * 7);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
+}
+.stage .win::before {
+  content: ""; position: absolute; left: calc(var(--u) * 7); top: calc(var(--u) * 6);
+  width: calc(var(--u) * 7); height: calc(var(--u) * 7); border-radius: 50%;
+  background: #ff5f57; box-shadow: calc(var(--u) * 11) 0 #febc2e, calc(var(--u) * 22) 0 #28c840;
+}
+.stage .win::after {
+  content: ""; position: absolute; left: calc(var(--u) * 12); right: 30%; top: 30%; height: calc(var(--u) * 24);
+  background: repeating-linear-gradient(180deg, rgba(0,0,0,.12) 0 calc(var(--u) * 4), transparent 0 calc(var(--u) * 9));
+}
+.stage .art {
+  border-radius: 22%;
+  background: linear-gradient(135deg, var(--yellow), #ff8a3d, #ff4f8b);
+}
+
+/* 1 · The island opens */
+.s-island .isl { animation: s1-isl 6.5s cubic-bezier(.32, 1.25, .5, 1) infinite; }
+.s-island .open { position: absolute; inset: 0; padding: calc(var(--u) * 20) calc(var(--u) * 18) 0; opacity: 0; animation: s1-open 6.5s ease infinite; }
+.s-island .tabs { display: flex; gap: calc(var(--u) * 10); }
+.s-island .tabs i { width: calc(var(--u) * 10); height: calc(var(--u) * 10); border-radius: calc(var(--u) * 3); background: rgba(255,255,255,.55); }
+.s-island .tabs i:first-child { background: var(--yellow); animation: s1-tab1 6.5s steps(1) infinite; }
+.s-island .tabs i:nth-child(2) { animation: s1-tab2 6.5s steps(1) infinite; }
+.s-island .row { display: flex; gap: calc(var(--u) * 10); margin-top: calc(var(--u) * 12); }
+.s-island .row .art { width: calc(var(--u) * 42); height: calc(var(--u) * 42); }
+.s-island .lines { display: grid; gap: calc(var(--u) * 6); align-content: center; }
+.s-island .lines b { display: block; height: calc(var(--u) * 6); border-radius: 9px; background: rgba(255,255,255,.9); width: calc(var(--u) * 90); }
+.s-island .lines b:nth-child(2) { background: rgba(255,255,255,.45); width: calc(var(--u) * 60); }
+.s-island .lines b:nth-child(3) { height: calc(var(--u) * 3); width: calc(var(--u) * 150); background: linear-gradient(90deg, var(--yellow) 46%, rgba(255,255,255,.2) 0); }
+.s-island .cursor { animation: s1-cursor 6.5s ease-in-out infinite; }
+@keyframes s1-isl {
+  0%, 24% { width: calc(var(--u) * 64); height: calc(var(--u) * 14); border-radius: 0 0 calc(var(--u) * 7) calc(var(--u) * 7); }
+  31%, 80% { width: calc(var(--u) * 270); height: calc(var(--u) * 112); border-radius: 0 0 calc(var(--u) * 22) calc(var(--u) * 22); }
+  88%, 100% { width: calc(var(--u) * 64); height: calc(var(--u) * 14); border-radius: 0 0 calc(var(--u) * 7) calc(var(--u) * 7); }
+}
+@keyframes s1-open { 0%, 28% { opacity: 0; } 34%, 78% { opacity: 1; } 84%, 100% { opacity: 0; } }
+@keyframes s1-tab1 { 0% { background: var(--yellow); } 52% { background: rgba(255,255,255,.55); } 84% { background: var(--yellow); } }
+@keyframes s1-tab2 { 0% { background: rgba(255,255,255,.55); } 52% { background: var(--yellow); } 84% { background: rgba(255,255,255,.55); } }
+@keyframes s1-cursor {
+  0%, 8% { transform: translate(calc(var(--u) * 360), calc(var(--u) * 190)); }
+  24%, 40% { transform: translate(calc(var(--u) * 236), calc(var(--u) * 6)); }
+  50%, 76% { transform: translate(calc(var(--u) * 186), calc(var(--u) * 24)); }
+  90%, 100% { transform: translate(calc(var(--u) * 360), calc(var(--u) * 190)); }
+}
+
+/* 2 · A window dragged to the notch */
+.s-windows .isl { animation: s2-isl 7s cubic-bezier(.32, 1.2, .5, 1) infinite; }
+.s-windows .layouts { position: absolute; left: 50%; top: calc(var(--u) * 18); transform: translateX(-50%); display: flex; gap: calc(var(--u) * 8); opacity: 0; animation: s2-layouts 7s ease infinite; }
+.s-windows .layouts i { width: calc(var(--u) * 44); height: calc(var(--u) * 30); border-radius: calc(var(--u) * 5); background: rgba(255,255,255,.08); position: relative; }
+.s-windows .layouts i::before, .s-windows .layouts i::after { content: ""; position: absolute; top: calc(var(--u) * 3); bottom: calc(var(--u) * 3); border-radius: calc(var(--u) * 2); background: rgba(255,255,255,.35); }
+.s-windows .layouts i::before { left: calc(var(--u) * 3); right: 52%; }
+.s-windows .layouts i::after { left: 52%; right: calc(var(--u) * 3); }
+.s-windows .layouts i:first-child::before { background: var(--yellow); }
+.s-windows .main { animation: s2-main 7s cubic-bezier(.4, 0, .2, 1) infinite; }
+.s-windows .other { left: calc(var(--u) * 233); top: calc(var(--u) * 20); width: calc(var(--u) * 221); height: calc(var(--u) * 214); opacity: 0; animation: s2-other 7s ease infinite; }
+.s-windows .cursor { animation: s2-cursor 7s cubic-bezier(.4, 0, .2, 1) infinite; }
+@keyframes s2-isl {
+  0%, 30% { width: calc(var(--u) * 64); height: calc(var(--u) * 14); border-radius: 0 0 calc(var(--u) * 7) calc(var(--u) * 7); }
+  36%, 56% { width: calc(var(--u) * 230); height: calc(var(--u) * 62); border-radius: 0 0 calc(var(--u) * 16) calc(var(--u) * 16); }
+  62%, 100% { width: calc(var(--u) * 64); height: calc(var(--u) * 14); border-radius: 0 0 calc(var(--u) * 7) calc(var(--u) * 7); }
+}
+@keyframes s2-layouts { 0%, 34% { opacity: 0; } 39%, 55% { opacity: 1; } 59%, 100% { opacity: 0; } }
+@keyframes s2-main {
+  0%, 8% { left: calc(var(--u) * 140); top: calc(var(--u) * 100); width: calc(var(--u) * 180); height: calc(var(--u) * 116); }
+  30% { left: calc(var(--u) * 170); top: calc(var(--u) * 56); width: calc(var(--u) * 120); height: calc(var(--u) * 78); }
+  36%, 56% { left: calc(var(--u) * 180); top: calc(var(--u) * 74); width: calc(var(--u) * 100); height: calc(var(--u) * 64); }
+  64%, 90% { left: calc(var(--u) * 6); top: calc(var(--u) * 20); width: calc(var(--u) * 221); height: calc(var(--u) * 214); }
+  100% { left: calc(var(--u) * 140); top: calc(var(--u) * 100); width: calc(var(--u) * 180); height: calc(var(--u) * 116); }
+}
+@keyframes s2-other { 0%, 60% { opacity: 0; } 66%, 90% { opacity: 1; } 96%, 100% { opacity: 0; } }
+@keyframes s2-cursor {
+  0%, 8% { transform: translate(calc(var(--u) * 236), calc(var(--u) * 104)); opacity: 1; }
+  30% { transform: translate(calc(var(--u) * 236), calc(var(--u) * 60)); }
+  36%, 56% { transform: translate(calc(var(--u) * 158), calc(var(--u) * 38)); opacity: 1; }
+  62%, 92% { opacity: 0; }
+  100% { transform: translate(calc(var(--u) * 236), calc(var(--u) * 104)); opacity: 1; }
+}
+
+/* 3 · Clipboard and tray */
+.s-clip .isl { width: calc(var(--u) * 300); height: calc(var(--u) * 104); border-radius: 0 0 calc(var(--u) * 22) calc(var(--u) * 22); }
+.s-clip .cards { position: absolute; left: calc(var(--u) * 16); top: calc(var(--u) * 26); display: flex; gap: calc(var(--u) * 8); }
+.s-clip .card-c { width: calc(var(--u) * 54); height: calc(var(--u) * 62); border-radius: calc(var(--u) * 8); background: rgba(255,255,255,.1); opacity: 0; transform: scale(.4); }
+.s-clip .card-c:nth-child(1) { animation: s3-c1 8s cubic-bezier(.3, 1.5, .5, 1) infinite; }
+.s-clip .card-c:nth-child(2) { animation: s3-c2 8s cubic-bezier(.3, 1.5, .5, 1) infinite; background: linear-gradient(180deg, #46c6d8, #2f7cf6); }
+.s-clip .card-c:nth-child(3) { animation: s3-c3 8s cubic-bezier(.3, 1.5, .5, 1) infinite; }
+.s-clip .card-c:nth-child(4) { animation: s3-c4 8s cubic-bezier(.3, 1.5, .5, 1) infinite; }
+.s-clip .card-c:nth-child(1)::before { content: "Aa"; position: absolute; left: calc(var(--u) * 7); top: calc(var(--u) * 6); color: var(--yellow); font: 700 calc(var(--u) * 11)/1 -apple-system, sans-serif; }
+.s-clip .card-c:nth-child(3)::before { content: "🔗"; position: absolute; inset: 0; display: grid; place-items: center; font-size: calc(var(--u) * 16); filter: grayscale(1) brightness(2); }
+.s-clip .card-c:nth-child(4)::before, .s-clip .file::before { content: ""; position: absolute; left: 32%; top: 28%; width: 36%; height: 44%; background: #fff; border-radius: calc(var(--u) * 2); clip-path: polygon(0 0, 66% 0, 100% 30%, 100% 100%, 0 100%); }
+.s-clip .keycap { left: 50%; top: calc(var(--u) * 170); transform: translateX(-50%) scale(.6); padding: calc(var(--u) * 5) calc(var(--u) * 10); background: #fff; border-radius: calc(var(--u) * 7); color: #222; font: 700 calc(var(--u) * 15)/1 -apple-system, sans-serif; opacity: 0; animation: s3-key 8s ease infinite; }
+.s-clip .file { width: calc(var(--u) * 40); height: calc(var(--u) * 40); opacity: 0; animation: s3-file 8s cubic-bezier(.4, 0, .2, 1) infinite; }
+.s-clip .file .cursor { left: calc(var(--u) * 20); top: calc(var(--u) * 20); }
+@keyframes s3-c1 { 0%, 8% { opacity: 0; transform: scale(.4); } 13%, 92% { opacity: 1; transform: scale(1); } 97%, 100% { opacity: 0; transform: scale(.8); } }
+@keyframes s3-c2 { 0%, 24% { opacity: 0; transform: scale(.4); } 29%, 92% { opacity: 1; transform: scale(1); } 97%, 100% { opacity: 0; transform: scale(.8); } }
+@keyframes s3-c3 { 0%, 40% { opacity: 0; transform: scale(.4); } 45%, 92% { opacity: 1; transform: scale(1); } 97%, 100% { opacity: 0; transform: scale(.8); } }
+@keyframes s3-c4 { 0%, 70% { opacity: 0; transform: scale(.4); } 75%, 92% { opacity: 1; transform: scale(1); } 97%, 100% { opacity: 0; transform: scale(.8); } }
+@keyframes s3-key {
+  0%, 6%, 17%, 22%, 33%, 38%, 49%, 100% { opacity: 0; transform: translateX(-50%) scale(.6); }
+  9%, 14%, 25%, 30%, 41%, 46% { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+@keyframes s3-file {
+  0%, 54% { opacity: 0; transform: translate(calc(var(--u) * 340), calc(var(--u) * 170)); }
+  57% { opacity: 1; transform: translate(calc(var(--u) * 340), calc(var(--u) * 170)); }
+  69% { opacity: 1; transform: translate(calc(var(--u) * 268), calc(var(--u) * 36)); }
+  73%, 100% { opacity: 0; transform: translate(calc(var(--u) * 268), calc(var(--u) * 36)); }
+}
+
+/* 4 · Live activities and notices: a closer look at the notch */
+.s-live .isl {
+  width: calc(var(--u) * 180); height: calc(var(--u) * 26); border-radius: 0 0 calc(var(--u) * 10) calc(var(--u) * 10);
+  animation: s4-isl 15s cubic-bezier(.32, 1.25, .5, 1) infinite;
+}
+.s-live .win { left: calc(var(--u) * 110); top: calc(var(--u) * 100); width: calc(var(--u) * 240); height: calc(var(--u) * 150); opacity: .9; }
+.s-live .music, .s-live .notice, .s-live .timer { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 calc(var(--u) * 10); }
+.s-live .music { justify-content: space-between; animation: s4-music 15s ease infinite; }
+.s-live .music .art { width: calc(var(--u) * 18); height: calc(var(--u) * 18); }
+.s-live .eq { display: flex; gap: calc(var(--u) * 2); align-items: center; height: calc(var(--u) * 16); }
+.s-live .eq i { width: calc(var(--u) * 2.5); height: 100%; border-radius: 9px; background: var(--yellow); animation: s4-eq .9s ease-in-out infinite alternate; }
+.s-live .eq i:nth-child(2) { animation-delay: -.3s; }
+.s-live .eq i:nth-child(3) { animation-delay: -.6s; }
+.s-live .eq i:nth-child(4) { animation-delay: -.15s; }
+.s-live .notice { align-items: flex-end; padding: 0 calc(var(--u) * 18) calc(var(--u) * 10); gap: calc(var(--u) * 10); opacity: 0; }
+.s-live .n-charge { animation: s4-charge 15s ease infinite; }
+.s-live .n-pods { animation: s4-pods 15s ease infinite; }
+.s-live .n-event { animation: s4-event 15s ease infinite; }
+.s-live .ico { width: calc(var(--u) * 24); height: calc(var(--u) * 24); flex: none; margin-bottom: calc(var(--u) * 2); }
+.s-live .n-pods small { color: rgba(255,255,255,.6); }
+.s-live .n-event small { color: var(--yellow); }
+.s-live .battery { width: calc(var(--u) * 26); height: calc(var(--u) * 13); border: calc(var(--u) * 2) solid #4cd964; border-radius: calc(var(--u) * 4); position: relative; margin-bottom: calc(var(--u) * 6); }
+.s-live .battery::before { content: ""; position: absolute; inset: calc(var(--u) * 1.5); right: 45%; background: #4cd964; border-radius: calc(var(--u) * 1.5); }
+.s-live .battery::after { content: ""; position: absolute; right: calc(var(--u) * -5); top: 25%; height: 50%; width: calc(var(--u) * 2); background: #4cd964; border-radius: 0 9px 9px 0; }
+.s-live .notice strong { display: block; color: #fff; font: 600 calc(var(--u) * 13)/1.25 -apple-system, sans-serif; }
+.s-live .notice small { display: block; color: #4cd964; font: 500 calc(var(--u) * 12)/1.25 -apple-system, sans-serif; }
+.s-live .timer { justify-content: space-between; color: var(--yellow); font: 600 calc(var(--u) * 14)/1 -apple-system, sans-serif; font-variant-numeric: tabular-nums; opacity: 0; animation: s4-timer 15s ease infinite; }
+.s-live .timer i { width: calc(var(--u) * 13); height: calc(var(--u) * 13); border: calc(var(--u) * 2) solid var(--yellow); border-radius: 50%; }
+@keyframes s4-isl {
+  0%, 11% { width: calc(var(--u) * 180); height: calc(var(--u) * 26); border-radius: 0 0 calc(var(--u) * 10) calc(var(--u) * 10); }
+  15%, 27% { width: calc(var(--u) * 230); height: calc(var(--u) * 72); border-radius: 0 0 calc(var(--u) * 24) calc(var(--u) * 24); }
+  31%, 39% { width: calc(var(--u) * 180); height: calc(var(--u) * 26); border-radius: 0 0 calc(var(--u) * 10) calc(var(--u) * 10); }
+  43%, 55% { width: calc(var(--u) * 230); height: calc(var(--u) * 72); border-radius: 0 0 calc(var(--u) * 24) calc(var(--u) * 24); }
+  59%, 69% { width: calc(var(--u) * 206); height: calc(var(--u) * 26); border-radius: 0 0 calc(var(--u) * 10) calc(var(--u) * 10); }
+  73%, 85% { width: calc(var(--u) * 230); height: calc(var(--u) * 72); border-radius: 0 0 calc(var(--u) * 24) calc(var(--u) * 24); }
+  89%, 100% { width: calc(var(--u) * 180); height: calc(var(--u) * 26); border-radius: 0 0 calc(var(--u) * 10) calc(var(--u) * 10); }
+}
+@keyframes s4-music { 0%, 11% { opacity: 1; } 13%, 30% { opacity: 0; } 32%, 39% { opacity: 1; } 41%, 89% { opacity: 0; } 91%, 100% { opacity: 1; } }
+@keyframes s4-charge { 0%, 16% { opacity: 0; } 19%, 26% { opacity: 1; } 29%, 100% { opacity: 0; } }
+@keyframes s4-pods { 0%, 44% { opacity: 0; } 47%, 54% { opacity: 1; } 57%, 100% { opacity: 0; } }
+@keyframes s4-timer { 0%, 59% { opacity: 0; } 62%, 68% { opacity: 1; } 71%, 100% { opacity: 0; } }
+@keyframes s4-event { 0%, 74% { opacity: 0; } 77%, 84% { opacity: 1; } 87%, 100% { opacity: 0; } }
+@keyframes s4-eq { from { transform: scaleY(.35); } to { transform: scaleY(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .stage *, .stage *::before { animation: none !important; }
+  .s-island .isl { width: calc(var(--u) * 270); height: calc(var(--u) * 112); border-radius: 0 0 calc(var(--u) * 22) calc(var(--u) * 22); }
+  .s-island .open, .s-clip .card-c, .s-live .music { opacity: 1; transform: none; }
+}
+.s-clip .card-c { position: relative; }
+
+/* Language switcher */
+.langs { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.langs a { padding: 2px 10px; text-decoration: none; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .03em; }
+.langs a[aria-current="page"] { background: var(--text); color: var(--bg); }
+.langs a:not([aria-current]):hover { color: var(--text); }
+
+/* The page's notch: hangs from the top of the window, in the middle of the bar. */
+.page-notch {
+  position: fixed; top: 0; left: 50%; z-index: 20;
+  --u: 1.15px;
+  transform: translate(-50%, -110%); opacity: 0;
+  transition: transform .55s cubic-bezier(.32, 1.25, .5, 1), opacity .25s ease;
+  pointer-events: none;
+}
+.notch-docked .page-notch { transform: translate(-50%, 0); opacity: 1; }
+.page-notch .isl {
+  position: relative; background: #000; overflow: hidden;
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .55);
+}
+.page-notch .art { border-radius: 22%; background: linear-gradient(135deg, var(--yellow), #ff8a3d, #ff4f8b); }
+/* On a phone the bar is narrow: a smaller notch, just the nacho beside it, a tighter switcher. */
+@media (max-width: 520px) {
+  .page-notch { --u: .72px; }
+  .bar strong { transition: opacity .2s ease; }
+  .notch-docked .bar strong { opacity: 0; }
+  .langs a { padding: 2px 7px; }
+}
