@@ -61,7 +61,7 @@
       <p class="tagline">Notchmaxxing</p>
       <p class="lead">Your notch isn't a flaw: it's a bite. NachOS turns it into an island like the iPhone's, with everything you need one pointer move away.</p>
       <div class="cta">
-        <a class="button" href="https://github.com/oriol5000/nachos/releases/latest/download/NachOS.dmg">
+        <a class="button" href="https://github.com/oriol5000/nachos/releases/latest/download/NachOS.dmg" data-guide>
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z"/></svg>
           Download for Mac
         </a>
@@ -151,12 +151,44 @@
       <div class="wrap">
         <h2 class="section-title">Installing, the first time.</h2>
         <p class="section-lead">Drag NachOS to Applications. Since it's free and doesn't go through Apple's paid review yet, macOS asks for your permission the first time you open it.</p>
-        <ol class="steps">
-          <li><strong>Open it.</strong><span>macOS will say it can't check it. Click “Done”.</span></li>
-          <li><strong>System Settings.</strong><span>Go to Privacy &amp; Security and, near the bottom, click “Open Anyway” next to NachOS.</span></li>
-          <li><strong>Confirm.</strong><span>Enter your password. From then on it opens like any other app.</span></li>
+        <ol class="guide">
+          <li>
+            <div class="shot"><div class="mock mock-dmg" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>NachOS</span></div>
+              <div class="dmg-row">
+                <div class="dmg-item"><img src="../assets/icon.png" alt=""><span>NachOS</span></div>
+                <div class="dmg-arrow">→</div>
+                <div class="dmg-item"><div class="folder"></div><span>Applications</span></div>
+              </div>
+            </div></div>
+            <h4>Drag it to Applications.</h4><p>Open NachOS.dmg from Downloads and drag NachOS to the Applications folder.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-alert" aria-hidden="true">
+              <img src="../assets/icon.png" alt="">
+              <strong>“NachOS” Not Opened</strong><p>Apple could not verify “NachOS” is free of malware that may harm your Mac or compromise your privacy.</p>
+              <span class="mbtn primary hl">Done</span><span class="mbtn">Move to Bin</span>
+            </div></div>
+            <h4>Open it and click “Done”.</h4><p>macOS will say it can't check it. That's expected: click “Done”, don't move it to the Bin.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-settings" aria-hidden="true">
+              <div class="side"><span>General</span><span class="sel">Privacy &amp; Security</span><span>Desktop &amp; Dock</span></div>
+              <div class="pane"><b>Security</b><p>“NachOS” was blocked to protect your Mac.</p><span class="mbtn hl">Open Anyway</span></div>
+            </div></div>
+            <h4>Open System Settings.</h4><p>Go to Privacy &amp; Security, scroll down to Security and click “Open Anyway” next to NachOS.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-alert" aria-hidden="true">
+              <img src="../assets/icon.png" alt="">
+              <strong>Open “NachOS”?</strong><p>macOS cannot verify the developer of “NachOS”. Are you sure you want to open it?</p>
+              <span class="mbtn primary hl">Open Anyway</span><span class="mbtn">Cancel</span>
+            </div></div>
+            <h4>Confirm.</h4><p>Click “Open Anyway” again and enter your password or use Touch ID. Done: from now on it opens like any other app.</p>
+          </li>
         </ol>
-        <p class="note">Only once. Updates arrive on their own, from inside the app.</p>
+
+        <p class="note">The wording may vary slightly with your version of macOS. Updates arrive on their own from the app, without these steps.</p>
       </div>
     </section>
 
@@ -195,7 +227,58 @@
       <span class="right">Not related to Nachos, Berkeley's teaching operating system. This one just makes the most of the notch.</span>
     </div>
   </footer>
+  <dialog class="guide-dialog" id="guide" aria-labelledby="guide-title">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <h2 class="section-title" id="guide-title">Installing NachOS</h2>
+    <p class="section-lead">Your download has started. Since NachOS is free and doesn't go through Apple's paid review yet, macOS asks for your permission the first time. Four steps, once.</p>
+        <ol class="guide">
+          <li>
+            <div class="shot"><div class="mock mock-dmg" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>NachOS</span></div>
+              <div class="dmg-row">
+                <div class="dmg-item"><img src="../assets/icon.png" alt=""><span>NachOS</span></div>
+                <div class="dmg-arrow">→</div>
+                <div class="dmg-item"><div class="folder"></div><span>Applications</span></div>
+              </div>
+            </div></div>
+            <h4>Drag it to Applications.</h4><p>Open NachOS.dmg from Downloads and drag NachOS to the Applications folder.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-alert" aria-hidden="true">
+              <img src="../assets/icon.png" alt="">
+              <strong>“NachOS” Not Opened</strong><p>Apple could not verify “NachOS” is free of malware that may harm your Mac or compromise your privacy.</p>
+              <span class="mbtn primary hl">Done</span><span class="mbtn">Move to Bin</span>
+            </div></div>
+            <h4>Open it and click “Done”.</h4><p>macOS will say it can't check it. That's expected: click “Done”, don't move it to the Bin.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-settings" aria-hidden="true">
+              <div class="side"><span>General</span><span class="sel">Privacy &amp; Security</span><span>Desktop &amp; Dock</span></div>
+              <div class="pane"><b>Security</b><p>“NachOS” was blocked to protect your Mac.</p><span class="mbtn hl">Open Anyway</span></div>
+            </div></div>
+            <h4>Open System Settings.</h4><p>Go to Privacy &amp; Security, scroll down to Security and click “Open Anyway” next to NachOS.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-alert" aria-hidden="true">
+              <img src="../assets/icon.png" alt="">
+              <strong>Open “NachOS”?</strong><p>macOS cannot verify the developer of “NachOS”. Are you sure you want to open it?</p>
+              <span class="mbtn primary hl">Open Anyway</span><span class="mbtn">Cancel</span>
+            </div></div>
+            <h4>Confirm.</h4><p>Click “Open Anyway” again and enter your password or use Touch ID. Done: from now on it opens like any other app.</p>
+          </li>
+        </ol>
+
+    <p class="note">The wording may vary slightly with your version of macOS. Updates arrive on their own from the app, without these steps.</p>
+    <form method="dialog" class="guide-done"><button class="button">Got it</button></form>
+  </dialog>
   <script>
+    // Downloading opens the guide: the file still downloads, and the steps are right there.
+    const guide = document.getElementById("guide");
+    document.querySelectorAll("[data-guide]").forEach((link) => {
+      link.addEventListener("click", () => setTimeout(() => guide.showModal(), 150));
+    });
+    guide.addEventListener("click", (event) => { if (event.target === guide) guide.close(); });
+
     // The page's notch shows only while the big one in the opening is out of sight.
     // Checked on scroll: one measurement, only when the page moves.
     const hero = document.querySelector(".hero-stage");

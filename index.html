@@ -61,7 +61,7 @@
       <p class="tagline">Notchmaxxing</p>
       <p class="lead">Tu notch no es un defecto: es un mordisco. NachOS lo convierte en una isla como la del iPhone, con todo lo que necesitas a un movimiento de ratón.</p>
       <div class="cta">
-        <a class="button" href="https://github.com/oriol5000/nachos/releases/latest/download/NachOS.dmg">
+        <a class="button" href="https://github.com/oriol5000/nachos/releases/latest/download/NachOS.dmg" data-guide>
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z"/></svg>
           Descargar para Mac
         </a>
@@ -151,12 +151,44 @@
       <div class="wrap">
         <h2 class="section-title">Instalar, la primera vez.</h2>
         <p class="section-lead">Arrastra NachOS a Aplicaciones. Como es gratis y aún no pasa por la revisión de pago de Apple, macOS pide tu permiso la primera vez que lo abres.</p>
-        <ol class="steps">
-          <li><strong>Ábrelo.</strong><span>macOS dirá que no puede comprobarlo. Pulsa «Hecho».</span></li>
-          <li><strong>Ajustes del Sistema.</strong><span>Ve a Privacidad y seguridad y, abajo, pulsa «Abrir igualmente» junto a NachOS.</span></li>
-          <li><strong>Confirma.</strong><span>Introduce tu contraseña. Desde entonces se abre como cualquier app.</span></li>
+        <ol class="guide">
+          <li>
+            <div class="shot"><div class="mock mock-dmg" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>NachOS</span></div>
+              <div class="dmg-row">
+                <div class="dmg-item"><img src="assets/icon.png" alt=""><span>NachOS</span></div>
+                <div class="dmg-arrow">→</div>
+                <div class="dmg-item"><div class="folder"></div><span>Aplicaciones</span></div>
+              </div>
+            </div></div>
+            <h4>Arrástralo a Aplicaciones.</h4><p>Abre NachOS.dmg desde Descargas y arrastra NachOS a la carpeta Aplicaciones.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-alert" aria-hidden="true">
+              <img src="assets/icon.png" alt="">
+              <strong>No se ha abierto “NachOS”</strong><p>Apple no ha podido verificar que “NachOS” no contenga malware que pueda dañar el Mac o comprometer tu privacidad.</p>
+              <span class="mbtn primary hl">Hecho</span><span class="mbtn">Trasladar a la papelera</span>
+            </div></div>
+            <h4>Ábrelo y pulsa «Hecho».</h4><p>macOS dirá que no puede comprobarlo. Es normal: pulsa «Hecho», no lo tires a la papelera.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-settings" aria-hidden="true">
+              <div class="side"><span>General</span><span class="sel">Privacidad y seguridad</span><span>Escritorio y Dock</span></div>
+              <div class="pane"><b>Seguridad</b><p>Se ha bloqueado el uso de “NachOS” para proteger el Mac.</p><span class="mbtn hl">Abrir igualmente</span></div>
+            </div></div>
+            <h4>Abre Ajustes del Sistema.</h4><p>Ve a Privacidad y seguridad, baja hasta Seguridad y pulsa «Abrir igualmente» junto a NachOS.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-alert" aria-hidden="true">
+              <img src="assets/icon.png" alt="">
+              <strong>¿Abrir “NachOS”?</strong><p>macOS no puede comprobar el desarrollador de “NachOS”. ¿Seguro que quieres abrirlo?</p>
+              <span class="mbtn primary hl">Abrir igualmente</span><span class="mbtn">Cancelar</span>
+            </div></div>
+            <h4>Confírmalo.</h4><p>Pulsa «Abrir igualmente» otra vez y pon tu contraseña o usa Touch ID. Listo: desde ahora se abre como cualquier app.</p>
+          </li>
         </ol>
-        <p class="note">Solo hace falta una vez. Las actualizaciones llegan solas desde la propia app.</p>
+
+        <p class="note">Los textos pueden cambiar un poco según tu versión de macOS. Las actualizaciones llegan solas desde la app, sin repetir estos pasos.</p>
       </div>
     </section>
 
@@ -195,7 +227,58 @@
       <span class="right">Sin relación con Nachos, el sistema operativo de Berkeley. Este solo le saca partido al notch.</span>
     </div>
   </footer>
+  <dialog class="guide-dialog" id="guide" aria-labelledby="guide-title">
+    <form method="dialog"><button class="close" aria-label="Cerrar">×</button></form>
+    <h2 class="section-title" id="guide-title">Instalar NachOS</h2>
+    <p class="section-lead">Tu descarga ha empezado. Como NachOS es gratis y aún no pasa por la revisión de pago de Apple, la primera vez macOS te pedirá permiso. Son cuatro pasos y solo una vez.</p>
+        <ol class="guide">
+          <li>
+            <div class="shot"><div class="mock mock-dmg" aria-hidden="true">
+              <div class="mock-bar"><i></i><i></i><i></i><span>NachOS</span></div>
+              <div class="dmg-row">
+                <div class="dmg-item"><img src="assets/icon.png" alt=""><span>NachOS</span></div>
+                <div class="dmg-arrow">→</div>
+                <div class="dmg-item"><div class="folder"></div><span>Aplicaciones</span></div>
+              </div>
+            </div></div>
+            <h4>Arrástralo a Aplicaciones.</h4><p>Abre NachOS.dmg desde Descargas y arrastra NachOS a la carpeta Aplicaciones.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-alert" aria-hidden="true">
+              <img src="assets/icon.png" alt="">
+              <strong>No se ha abierto “NachOS”</strong><p>Apple no ha podido verificar que “NachOS” no contenga malware que pueda dañar el Mac o comprometer tu privacidad.</p>
+              <span class="mbtn primary hl">Hecho</span><span class="mbtn">Trasladar a la papelera</span>
+            </div></div>
+            <h4>Ábrelo y pulsa «Hecho».</h4><p>macOS dirá que no puede comprobarlo. Es normal: pulsa «Hecho», no lo tires a la papelera.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-settings" aria-hidden="true">
+              <div class="side"><span>General</span><span class="sel">Privacidad y seguridad</span><span>Escritorio y Dock</span></div>
+              <div class="pane"><b>Seguridad</b><p>Se ha bloqueado el uso de “NachOS” para proteger el Mac.</p><span class="mbtn hl">Abrir igualmente</span></div>
+            </div></div>
+            <h4>Abre Ajustes del Sistema.</h4><p>Ve a Privacidad y seguridad, baja hasta Seguridad y pulsa «Abrir igualmente» junto a NachOS.</p>
+          </li>
+          <li>
+            <div class="shot"><div class="mock mock-alert" aria-hidden="true">
+              <img src="assets/icon.png" alt="">
+              <strong>¿Abrir “NachOS”?</strong><p>macOS no puede comprobar el desarrollador de “NachOS”. ¿Seguro que quieres abrirlo?</p>
+              <span class="mbtn primary hl">Abrir igualmente</span><span class="mbtn">Cancelar</span>
+            </div></div>
+            <h4>Confírmalo.</h4><p>Pulsa «Abrir igualmente» otra vez y pon tu contraseña o usa Touch ID. Listo: desde ahora se abre como cualquier app.</p>
+          </li>
+        </ol>
+
+    <p class="note">Los textos pueden cambiar un poco según tu versión de macOS. Las actualizaciones llegan solas desde la app, sin repetir estos pasos.</p>
+    <form method="dialog" class="guide-done"><button class="button">Entendido</button></form>
+  </dialog>
   <script>
+    // Downloading opens the guide: the file still downloads, and the steps are right there.
+    const guide = document.getElementById("guide");
+    document.querySelectorAll("[data-guide]").forEach((link) => {
+      link.addEventListener("click", () => setTimeout(() => guide.showModal(), 150));
+    });
+    guide.addEventListener("click", (event) => { if (event.target === guide) guide.close(); });
+
     // The page's notch shows only while the big one in the opening is out of sight.
     // Checked on scroll: one measurement, only when the page moves.
     const hero = document.querySelector(".hero-stage");
