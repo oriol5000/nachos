@@ -4,6 +4,18 @@
     <title>NachOS</title>
     <language>en</language>
     <item>
+      <title>NachOS 0.2.0</title>
+      <pubDate>Sun, 08 Nov 2026 12:44:32 GMT</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul><li>New: passwords, one-time codes, phone numbers, emails and credit cards show up hidden in the clipboard, with an eye button to reveal them. You choose what to hide in Settings.</li>
+<li>New: dismiss a notice with its X, or by sliding two fingers up on the trackpad.</li>
+<li>New: slide two fingers up to close the open island.</li>
+<li>New: a gear on the open island takes you straight to Settings.</li><li>NachOS is still a beta. Tell me what you like and what doesn't work from the island's menu → “Send a Suggestion…”.</li></ul>]]></description>
+      <enclosure url="https://github.com/oriol5000/nachos/releases/download/v0.2.0/NachOS-0.2.0.dmg" sparkle:edSignature="LU43rUTNp5d5zjNRTbW74TqRg2m1Ry/o2+VisraBKnf4+eepfh1Fqn5T8UnTiSyLTahzR1r/rOmLVdPogkIpCQ==" length="5918705" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NachOS 0.1.1</title>
       <pubDate>Sat, 07 Nov 2026 19:26:07 GMT</pubDate>
       <sparkle:version>2</sparkle:version>
