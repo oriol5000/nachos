@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
   <channel>
     <title>NachOS</title>
-    <language>es</language>
+    <language>en</language>
     <item>
       <title>NachOS 0.1.1</title>
       <pubDate>Sat, 07 Nov 2026 19:26:07 GMT</pubDate>
       <sparkle:version>2</sparkle:version>
       <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<ul><li>Con varias pantallas, la isla va a la pantalla donde está el ratón / With several screens, the island follows the pointer.</li></ul>]]></description>
+      <description><![CDATA[<ul><li>With several screens, the island follows the pointer.</li><li>NachOS is still a beta. Tell me what you like and what doesn't work from the island's menu → “Send a Suggestion…”.</li></ul>]]></description>
       <enclosure url="https://github.com/oriol5000/nachos/releases/download/v0.1.1/NachOS-0.1.1.dmg" sparkle:edSignature="Fc3PusVj9VPAsxQ4pnz7b/XwRy4kDVfEJQVnTDeWCYDrixBPVD/xewUvhzF7zqYIQ42+1TmvrxIZf5htL2hvBQ==" length="5849072" type="application/octet-stream"/>
     </item>
     <item>
