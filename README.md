@@ -1,28 +1,36 @@
 <p align="center"><img src="assets/icon.png" width="128" alt="NachOS"></p>
 
 <h1 align="center">NachOS</h1>
-<p align="center"><strong>Notchmaxxing</strong> · tu notch no es un defecto: es un mordisco.</p>
+<p align="center"><strong>Notchmaxxing</strong> · your notch isn't a flaw: it's a bite.</p>
 
-NachOS convierte el notch de tu Mac en una isla como la del iPhone: música con letras, ventanas en mosaico, un portapapeles con memoria, calendario y tareas, temporizadores, el tiempo, avisos y un par de juegos. Gratis.
+NachOS turns your Mac's notch into an island like the iPhone's: music with lyrics, window tiling, a clipboard with memory, calendar and tasks, timers, weather, notices and a couple of games. Free.
 
-**Web:** [oriol5000.github.io/nachos](https://oriol5000.github.io/nachos/) · [English](https://oriol5000.github.io/nachos/en/) · [Italiano](https://oriol5000.github.io/nachos/it/)
+**Website:** [oriol5000.github.io/nachos](https://oriol5000.github.io/nachos/en/) · [Español](https://oriol5000.github.io/nachos/) · [Italiano](https://oriol5000.github.io/nachos/it/)
 
-## Descargar
+## Download
 
-[**Descargar NachOS para Mac**](https://github.com/oriol5000/nachos/releases/latest/download/NachOS.dmg). macOS 14 Sonoma o posterior, Apple silicon e Intel, con notch o sin él.
+[**Download NachOS for Mac**](https://github.com/oriol5000/nachos/releases/latest/download/NachOS.dmg). macOS 14 Sonoma or later, Apple silicon and Intel, with or without a notch.
 
-Abre el `.dmg` y arrastra NachOS a Aplicaciones. La primera vez, macOS pide tu permiso:
+Updates arrive on their own, from inside the app.
 
-1. Abre NachOS. macOS dirá que no puede comprobarlo: pulsa «Hecho».
-2. En **Ajustes del Sistema → Privacidad y seguridad**, pulsa **«Abrir igualmente»** junto a NachOS.
-3. Introduce tu contraseña. Desde entonces se abre como cualquier app.
+## This is a beta
 
-Las actualizaciones llegan solas desde la propia app.
+NachOS is still a beta and isn't notarized by Apple yet. That's why macOS warns you the first time you open it: it means Apple hasn't checked this build, not that it found anything wrong.
 
-## Fallos y sugerencias
+**To open it the first time**, follow these four steps. You only need to do this once:
 
-¿Algo no va? [Cuéntalo aquí](https://github.com/oriol5000/nachos/issues). ¿Una idea? Escribe a [oriol5000@gmail.com](mailto:oriol5000@gmail.com?subject=Sugerencia%20para%20NachOS), o desde la propia app: menú de la isla → «Enviar una sugerencia…».
+![The four steps: drag NachOS to Applications; open it and click Done on the warning; in System Settings, under Privacy & Security, click Open Anyway; click Open Anyway again to confirm.](assets/install-steps.png)
+
+## Roadmap
+
+1. **Now:** people try NachOS and tell me what they like and what doesn't work.
+2. **Next:** fix the flaws and improve what people use most, based on that feedback.
+3. **If NachOS reaches a sizeable user base:** get it notarized by Apple, so the warning goes away.
+
+## Bugs and suggestions
+
+Something not working? [Tell me here](https://github.com/oriol5000/nachos/issues). Got an idea? Write to [oriol5000@gmail.com](mailto:oriol5000@gmail.com?subject=Suggestion%20for%20NachOS), or from the app itself: the island's menu → “Send a Suggestion…”.
 
 ---
 
-Este repositorio contiene la web y las versiones publicadas. NachOS es gratis; su código no es público.
+This repository holds the website and the published versions. NachOS is free; its code isn't public.
